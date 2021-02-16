@@ -21,3 +21,10 @@ app.listen(8080, function () {
 app.get('/test', function (req, res) {
     res.send(mockAPIResponse)
 })
+
+
+//Declaring API credentials
+
+var textapi = new aylien({
+    application_key: "1245be861fb96250fc0440defb01a37d"
+  });
