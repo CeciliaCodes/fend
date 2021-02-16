@@ -14,3 +14,7 @@ function checkForName(inputText) {
 }
 
 export { checkForName }
+
+
+
+//CHANGE THIS TO REFLECT INPUTTEXT NAMES
