@@ -1,3 +1,6 @@
+//DOTNEV is the environment variable for our api key
+const dotenv = require('dotenv');
+dotenv.config();
 var path = require('path')
 const express = require('express')
 const mockAPIResponse = require('./mockAPI.js')
@@ -15,7 +18,8 @@ app.get('/', function (req, res) {
 
 // designates what port the app will listen to for incoming requests
 app.listen(8080, function () {
-    console.log('Example app listening on port 8080!')
+    console.log('Example app listening on port 8080!');
+    console.log(`Your API key is ${process.env.API_KEY}`);
 })
 
 app.get('/test', function (req, res) {
@@ -26,5 +30,5 @@ app.get('/test', function (req, res) {
 //Declaring API credentials
 
 var textapi = new aylien({
-    application_key: "1245be861fb96250fc0440defb01a37d"
+    application_key: "process.env.1245be861fb96250fc0440defb01a37d"
   });
