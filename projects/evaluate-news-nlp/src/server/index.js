@@ -4,14 +4,19 @@ dotenv.config();
 var path = require('path')
 const express = require('express')
 const mockAPIResponse = require('./mockAPI.js')
+const bodyParser = require('body-parser')
+const cors = require('cors')
+const fetch = require('node-fetch');
 
 const app = express()
 
+
+
+//setting up Node server
 app.use(express.static('dist'))
-
-console.log(__dirname)
-
-
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
+app.use(cors())
 
 
 app.get('/', function (req, res) {
@@ -45,6 +50,16 @@ app.post('/analyze', function(req, res){
             "content-type": "application/JSON",
         }
 
+    }).then(response => {
+        return response.json();
+    }).then((data) => {
+        console.log("Data from meaningcloud", data);
+        res.send({
+            //These are taken from the API's response section: https://www.meaningcloud.com/developer/sentiment-analysis/doc/2.1/response
+            score_tag: data.score_tag,
+            agreement: data.agreement,
+            irony: data.irony
+        })
     })
 
 
@@ -53,6 +68,6 @@ app.post('/analyze', function(req, res){
 
 //Declaring API credentials
 
-var textapi = new aylien({
-    application_key: "process.env.1245be861fb96250fc0440defb01a37d"
-  });
+// var textapi = new aylien({
+//     application_key: "process.env.1245be861fb96250fc0440defb01a37d"
+//   });
