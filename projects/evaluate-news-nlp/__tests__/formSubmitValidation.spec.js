@@ -1,3 +1,5 @@
+import { handleSubmit } from "../src/client/js/formHandler"
+
 describe('Test fetch URL for localhost' , () => {
     test('It should return true', () => {
         const input = "http://localhost:8080/analyze";
