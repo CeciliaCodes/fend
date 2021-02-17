@@ -47,10 +47,10 @@ app.post('/analyze', function(req, res){
     fetch(urlToFetch, {
         method: 'POST',
         headers: { 
-            "content-type": "application/JSON",
-        }
+            "content-type": "application/json",
+        },
 
-    }).then(response => {
+    }).then((response) => {
         return response.json();
     }).then((data) => {
         console.log("Data from meaningcloud", data);
@@ -60,9 +60,7 @@ app.post('/analyze', function(req, res){
             agreement: data.agreement,
             irony: data.irony
         })
-    })
-
-
+    });
     //res.send(data)
 })
 
