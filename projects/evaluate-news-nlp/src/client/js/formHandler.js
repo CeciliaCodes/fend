@@ -15,7 +15,7 @@ function handleSubmit(event) {
             articleUrl: formText
         }
     })
-    .then(response => response.json())
+    .then(res => res.json())
     .then(data => {
         document.getElementById('scoreTag').innerHTML = "Score: " + data.score_tag
         document.getElementById('agreement').innerHTML = "Agreement: " + data.agreement

@@ -19,11 +19,6 @@ app.use(bodyParser.json())
 app.use(cors())
 
 
-app.get('/', function (req, res) {
-    res.sendFile('dist/index.html')
-    // res.sendFile(path.resolve('src/client/views/index.html'))
-})
-
 // designates what port the app will listen to for incoming requests
 app.listen(8080, function () {
     console.log('Example app listening on port 8080!');
@@ -33,6 +28,14 @@ app.listen(8080, function () {
 // app.get('/test', function (req, res) {
 //     res.send(mockAPIResponse)
 // })
+
+
+
+app.get('/', function (req, res) {
+    res.sendFile('dist/index.html')
+    // res.sendFile(path.resolve('src/client/views/index.html'))
+})
+
 
 
 app.post('/analyze', function(req, res){
@@ -69,3 +72,4 @@ app.post('/analyze', function(req, res){
 // var textapi = new aylien({
 //     application_key: "process.env.1245be861fb96250fc0440defb01a37d"
 //   });
+
