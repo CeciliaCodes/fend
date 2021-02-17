@@ -1,3 +1,11 @@
+# Personal Notes
+
+I utilized Jest to test for the valid URL (localhost:8080). I decided not to test any further because I've never used Jest before and I didn't want to get in over my head.
+
+I chose the sentiment analysis tool from MeaningCloud and used the generic mode.
+
+
+
 # Project Instructions
 
 This repo is your starter code for the project. It is the same as the starter code we began with in lesson 2. Install and configure Webpack just as we did in the course. Feel free to refer to the course repo as you build this one, and remember to make frequent commits and to create and merge branches as necessary!
