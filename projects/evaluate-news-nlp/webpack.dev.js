@@ -21,7 +21,7 @@ module.exports = {
             {
                 test: /\.scss$/,
                 use: [ 'style-loader', 'css-loader', 'sass-loader' ]
-        }
+            }
         ]
     },
     plugins: [
@@ -38,6 +38,10 @@ module.exports = {
             cleanStaleWebpackAssets: true,
             protectWebpackAssets: false
         }),
-        new MiniCssExtractPlugin({ filename: "[name].css" }),
-    ]
+        
+    ],
+    output: {
+        libraryTarget: 'var',
+        library: 'Client'
+    }
 }

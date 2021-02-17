@@ -30,9 +30,9 @@ app.listen(8080, function () {
     console.log(`Your API key is ${process.env.API_KEY}`);
 })
 
-app.get('/test', function (req, res) {
-    res.send(mockAPIResponse)
-})
+// app.get('/test', function (req, res) {
+//     res.send(mockAPIResponse)
+// })
 
 
 app.post('/analyze', function(req, res){

@@ -1,5 +1,11 @@
 # Personal Notes
 
+To start this project, run npm install. 
+
+Make sure to npm run build-dev to start your Client, and npm run build-prod to begin your Node server.
+
+When you npm run start, you should see a console log message in the terminal with the port number and your API key you got from MeaningCloud. Add your API key to the .env file.
+
 I utilized Jest to test for the valid URL (localhost:8080). I decided not to test any further because I've never used Jest before and I didn't want to get in over my head.
 
 I chose the sentiment analysis tool from MeaningCloud and used the generic mode.
