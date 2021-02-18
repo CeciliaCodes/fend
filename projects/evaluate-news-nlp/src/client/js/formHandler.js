@@ -12,9 +12,9 @@ function handleSubmit(event) {
         headers: {
             "Content-Type": "application/json"
         },
-        body: {
+        body: JSON.stringify({
             articleUrl: formText
-        }
+        })
         
     })
     .then(response => response.json())
