@@ -15,7 +15,7 @@ function handleSubmit(event) {
         body: JSON.stringify(textInput),
         
     })
-    .then(res => res.json())
+    .then(response => response.json())
     .then(data => {
         document.getElementById('scoreTag').innerHTML = "Score: " + data.score_tag
         document.getElementById('agreement').innerHTML = "Agreement: " + data.agreement
