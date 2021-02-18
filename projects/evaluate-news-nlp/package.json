@@ -5,7 +5,7 @@
   "scripts": {
     "test": "jest",
     "start": "node src/server/index.js",
-    "prod": "webpack serve --config webpack.prod.js --open",
+    "prod": "webpack --config webpack.prod.js",
     "dev": "webpack serve --config webpack.dev.js --open"
   },
   "keywords": [],
