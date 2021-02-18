@@ -11,7 +11,6 @@ const fetch = require('node-fetch');
 const app = express()
 
 
-
 //setting up Node server
 app.use(express.static('dist'))
 app.use(bodyParser.urlencoded({ extended: true }))
