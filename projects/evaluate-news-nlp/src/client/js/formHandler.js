@@ -3,17 +3,17 @@ function handleSubmit(event) {
 
     // check what text was put into the form field
     let formText = document.getElementById('textInput').value
-    Client.checkForName()
+    Client.checkForName(textInput)
 
     console.log("::: Form Submitted :::")
     fetch('http://localhost:8080/analyze', {
         method: 'POST',
+        mode: 'cors',
         headers: {
             "Content-Type": "application/json"
         },
-        body: {
-            articleUrl: formText
-        }
+        body: JSON.stringify(textInput),
+        
     })
     .then(res => res.json())
     .then(data => {
