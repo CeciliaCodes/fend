@@ -47,25 +47,19 @@ app.post('/analyze', function(req, res){
     const urlToFetch = baseUrl + params;
 
 
-    fetch(urlToFetch, {
-        method: 'POST',
-        headers: { 
-            "content-type": "application/json",
-        },
-
-    }).then((response) => {
-        return response.json();
-    }).then((data) => {
-        console.log("Data from meaningcloud", data);
-        res.send({
-            //These are taken from the API's response section: https://www.meaningcloud.com/developer/sentiment-analysis/doc/2.1/response
-            score_tag: data.score_tag,
-            agreement: data.agreement,
-            irony: data.irony
+    const response = await fetch(urlToFetch)
+        try{
+    const data = await response.json()
+    res.send({
+        score_tag: data.score_tag,
+        agreement: data.agreement,
+        irony: data.irony
         })
-    });
+    }catch(error){
+      console.log(error)
+    }
     //res.send(data)
-})
+});
 
 //Declaring API credentials
 
