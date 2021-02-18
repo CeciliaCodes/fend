@@ -21,9 +21,6 @@ function handleSubmit(event) {
     .then(function (response){
         console.log("response from /analyze", res)
         document.getElementById('results').innerHTML = res.message
-        document.getElementById('scoreTag').innerHTML = "Score: " + data.score_tag
-        document.getElementById('agreement').innerHTML = "Agreement: " + data.agreement
-        document.getElementById('irony').innerHTML = "Irony: " + data.irony
     })
     
 }
