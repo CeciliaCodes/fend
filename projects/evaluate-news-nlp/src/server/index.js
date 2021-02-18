@@ -14,7 +14,7 @@ const app = express()
 
 //setting up Node server
 app.use(express.static('dist'))
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 app.use(cors())
 
@@ -42,23 +42,25 @@ app.post('/analyze', function(req, res){
     const API_KEY = process.env.API_KEY;
     const articleUrl = req.body.articleUrl;
 
-    const baseUrl = "https://api.meaningcloud.com/sentiment-2.1";
-    const params = `?key=${API_KEY}&lang=en&model=general&url=${articleUrl}`;
+    const baseUrl = "https://api.meaningcloud.com/";
+    const params = `/sentiment-2.1?key=${API_KEY}&lang=en&model=restaurantReviewModel_en&url=${articleUrl}`;
     const urlToFetch = baseUrl + params;
 
-
-    const response = await fetch(urlToFetch)
-        try{
-    const data = await response.json()
-    res.send({
-        score_tag: data.score_tag,
-        agreement: data.agreement,
-        irony: data.irony
+    fetch(urlToFetch, {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json",
+        }
+    }).then((response) => {
+        return response.json();
+    }).then((data) => {
+        console.log("data from MeaningCloud", data);
+        res.send({
+            score_tag: data.score_tag,
+            agreement: data.agreement,
+            irony: data.irony
         })
-    }catch(error){
-      console.log(error)
-    }
-    //res.send(data)
+    });
 });
 
 
