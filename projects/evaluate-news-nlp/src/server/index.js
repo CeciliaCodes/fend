@@ -61,9 +61,4 @@ app.post('/analyze', function(req, res){
     //res.send(data)
 });
 
-//Declaring API credentials
-
-// var textapi = new aylien({
-//     application_key: "process.env.1245be861fb96250fc0440defb01a37d"
-//   });
 
