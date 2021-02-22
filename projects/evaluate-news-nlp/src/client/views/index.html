@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src='\client\js\formHandler.js' type='text/javascript'></script>
+    
     <title>Test</title>
 </head>
     <body>
@@ -33,22 +33,14 @@
             </section>
 
 
-            <script>
-                if ('serviceWorker' in navigator) {
-                window.addEventListener('load', () => {  navigator.serviceWorker.register('/service-worker.js')
-                .then(registration =>{
-                      console.log('SW registered successfuly: ', registration); });
-                });
-                 }else{
-                  console.log("Service Working not supported");
-                    }
-            </script>
+            
         </main>
 
         <footer>
             <p>By Cecilia Parrish, API by <a href="https://www.meaningcloud.com/developer/sentiment-analysis/doc/2.1/examples" target=blank>Meaning Cloud</a></p>
         </footer>
 
+        <script src='\client\js\formHandler.js' type='text/javascript'></script>
 
        
 
